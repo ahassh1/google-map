@@ -2,9 +2,13 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
+import { APIProvider } from '@vis.gl/react-google-maps'
+import { googleMapAPIKey } from './map-api-key.js'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <APIProvider apiKey={googleMapAPIKey}>
+      <App />
+    </APIProvider>
   </StrictMode>,
 )
